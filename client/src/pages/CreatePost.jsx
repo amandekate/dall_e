@@ -17,10 +17,10 @@ const CreatePost = () => {
   const [loading, setLoading] = useState(false);
 
   const generateImage = async () => {
-    if (form.prompt && process.env.BE_URL) {
+    if (form.prompt && import.meta.env.VITE_BE_URL) {
       try {
         setGeneratingImg(true);
-        const response = await fetch(`${process.env.BE_URL}/api/v1/dalle`, {
+        const response = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/dalle`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
