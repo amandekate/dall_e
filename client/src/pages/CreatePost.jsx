@@ -21,7 +21,7 @@ const CreatePost = () => {
       console.log(import.meta.env.VITE_BE_URL)
       try {
         setGeneratingImg(true);
-        const response = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/dalle`, {
+        const response = await fetch(`https://dall-e-be.vercel.app/api/v1/dalle`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
