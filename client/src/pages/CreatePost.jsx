@@ -17,7 +17,8 @@ const CreatePost = () => {
   const [loading, setLoading] = useState(false);
 
   const generateImage = async () => {
-    if (form.prompt && import.meta.env.VITE_BE_URL) {
+    if (form.prompt) {
+      console.log(import.meta.env.VITE_BE_URL)
       try {
         setGeneratingImg(true);
         const response = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/dalle`, {
