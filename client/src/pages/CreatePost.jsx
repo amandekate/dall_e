@@ -33,7 +33,7 @@ const CreatePost = () => {
               'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ prompt: form.prompt }),
+            body: JSON.stringify({ prompt: form.prompt , }),
           }
         );
 
@@ -171,7 +171,7 @@ const CreatePost = () => {
             others in the community
           </p>
           <button
-            onClick={handleSubmit}
+            type="submit"
             className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             {loading ? "Sharing..." : "Share with the community"}
