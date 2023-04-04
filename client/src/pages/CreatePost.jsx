@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { preview } from "../assets";
-import { getRandomPrompt } from "../utils";
+import { downloadImage, getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
+import DownloadButton from "../components/DownloadButton";
 
 const CreatePost = () => {
   const navigate = useNavigate();
@@ -12,7 +13,9 @@ const CreatePost = () => {
     name: "",
     prompt: "",
     photo: "",
+    base64String: "",
   });
+
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -34,7 +37,11 @@ const CreatePost = () => {
 
         const data = await response.json();
 
-        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+        setForm({
+          ...form,
+          photo: `data:image/jpeg;base64,${data.photo}`,
+          base64String: data.photo,
+        });
       } catch (error) {
         alert(error);
       } finally {
@@ -59,7 +66,7 @@ const CreatePost = () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({...form}),
+            body: JSON.stringify({ ...form }),
           }
         );
         await response.json();
@@ -146,13 +153,21 @@ const CreatePost = () => {
           </button>
         </div>
 
+        <div className="mt-5 flex gap-5">
+          <DownloadButton
+            base64ImageString={form.base64String}
+            fileName={form.prompt}
+            className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+          />
+        </div>
+
         <div className="mt-10">
           <p className="mt-2 text-[#666e75] text-[14px]">
             Once you have created the image you want, you can share it with
             others in the community
           </p>
           <button
-            type="submit"
+            onClick={handleSubmit}
             className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             {loading ? "Sharing..." : "Share with the community"}
