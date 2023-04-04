@@ -65,12 +65,11 @@ const CreatePost = () => {
           `https://dall-e-be.vercel.app/api/v1/post`,
           {
             method: "POST",
+            mode: 'cors',
             headers: {
               "access-control-allow-origin" : "*",
-              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
-              "Content-Type": "application/json",
             },
-            mode: "cors",
+            
             body: JSON.stringify({ ...form }),
           }
         );
