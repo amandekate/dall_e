@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { preview } from "../assets";
-import { downloadImage, getRandomPrompt } from "../utils";
+import {  getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
 import DownloadButton from "../components/DownloadButton";
 
@@ -30,6 +30,7 @@ const CreatePost = () => {
             method: "POST",
             headers: {
               "access-control-allow-origin" : "*",
+              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
               "Content-Type": "application/json",
             },
             body: JSON.stringify({ prompt: form.prompt }),
@@ -66,6 +67,7 @@ const CreatePost = () => {
             method: "POST",
             headers: {
               "access-control-allow-origin" : "*",
+              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
               "Content-Type": "application/json",
             },
             body: JSON.stringify({ ...form }),
