@@ -70,6 +70,7 @@ const CreatePost = () => {
               'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
               "Content-Type": "application/json",
             },
+            mode: "cors",
             body: JSON.stringify({ ...form }),
           }
         );
