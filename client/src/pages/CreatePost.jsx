@@ -29,6 +29,7 @@ const CreatePost = () => {
           {
             method: "POST",
             headers: {
+              "access-control-allow-origin" : "*",
               "Content-Type": "application/json",
             },
             body: JSON.stringify({ prompt: form.prompt }),
@@ -64,6 +65,7 @@ const CreatePost = () => {
           {
             method: "POST",
             headers: {
+              "access-control-allow-origin" : "*",
               "Content-Type": "application/json",
             },
             body: JSON.stringify({ ...form }),
