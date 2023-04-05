@@ -38,7 +38,7 @@ const home = () => {
         setLoading(false);
       }
     };
-    fetchPosts();
+    fetchPosts(); 
   }, []);
 
   const handleSearchChange = (e) => {
