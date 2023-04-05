@@ -29,8 +29,8 @@ const CreatePost = () => {
           {
             method: "POST",
             headers: {
-              // "access-control-allow-origin" : "*",
-              // 'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
+              "access-control-allow-origin" : "*",
+              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
               "Content-Type": "application/json",
             },
             body: JSON.stringify({ prompt: form.prompt , }),
@@ -67,7 +67,8 @@ const CreatePost = () => {
             method: "POST",
             mode: 'no-cors',
             headers: {
-              // "access-control-allow-origin" : "*",
+              "access-control-allow-origin" : "*",
+              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
               "Content-Type": "application/json",
             },
             
