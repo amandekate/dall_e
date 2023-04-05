@@ -26,6 +26,8 @@ const home = () => {
         const response = await fetch(`https://dall-e-be.vercel.app/api/v1/post`, {
           method: "GET",
           headers: {
+            "access-control-allow-origin" : "*",
+            'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
             "Content-Type": "application/json",
           },
         });
