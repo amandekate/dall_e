@@ -9,7 +9,7 @@ function DownloadButton({ base64ImageString, fileName, className }) {
       byteNumbers[i] = byteCharacters.charCodeAt(i);
     }
     const byteArray = new Uint8Array(byteNumbers);
-    const blob = new Blob([byteArray], { type: "image/png" }); // replace image/png with the appropriate MIME type for your image
+    const blob = new Blob([byteArray], { type: "image/jpeg" }); 
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
