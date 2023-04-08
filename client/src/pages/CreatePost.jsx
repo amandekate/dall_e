@@ -13,7 +13,6 @@ const CreatePost = () => {
     name: "",
     prompt: "",
     photo: "",
-    base64String: "",
   });
 
   const [generatingImg, setGeneratingImg] = useState(false);
