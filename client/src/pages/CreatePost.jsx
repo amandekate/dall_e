@@ -67,7 +67,6 @@ const CreatePost = () => {
             mode: 'no-cors',
             headers: {
               "access-control-allow-origin" : "*",
-              'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS',
               "Content-Type": "application/json",
             },
             
