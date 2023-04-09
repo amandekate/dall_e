@@ -15,12 +15,12 @@ const CreatePost = () => {
     photo: "",
   });
 
-  const [generatingImg, setGeneratingImg] = useState(false);
+  const [generatingImg, setGeneratingImg] = zzuseState(false);
   const [loading, setLoading] = useState(false);
 
   const generateImage = async () => {
     if (form.prompt) {
-      // console.log(import.meta.env.VITE_BE_URL);
+      console.log(import.meta.env.VITE_BE_URL);
       try {
         setGeneratingImg(true);
         const response = await fetch(
@@ -62,9 +62,9 @@ const CreatePost = () => {
           `https://dall-e-be.vercel.app/api/v1/post`,
           {
             method: "POST",
-            mode: 'no-cors',
+            // mode: 'no-cors',
             headers: {
-              "access-control-allow-origin" : "*",
+              // "access-control-allow-origin" : "*",
               "Content-Type": "application/json",
             },
             
@@ -157,7 +157,7 @@ const CreatePost = () => {
 
         <div className="mt-5 flex gap-5">
           <DownloadButton
-            base64ImageString={form.base64String}
+            base64ImageString={form.photo}
             fileName={form.prompt}
             className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           />
