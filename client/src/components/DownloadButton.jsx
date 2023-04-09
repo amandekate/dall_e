@@ -29,7 +29,7 @@ function DownloadButton({ base64ImageString, fileName, className }) {
 const downloadImage = (e) => {
   e.preventDefault();
   try {
-    const byteCharacters = atob(base64ImageString);
+    const byteCharacters = window.atob(base64ImageString);
     const byteNumbers = new Array(byteCharacters.length);
     for (let i = 0; i < byteCharacters.length; i++) {
       byteNumbers[i] = byteCharacters.charCodeAt(i);
