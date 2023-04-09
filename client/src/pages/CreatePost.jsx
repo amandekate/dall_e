@@ -164,7 +164,6 @@ const CreatePost = () => {
             onClick={() => downloadImage(_id, photo)}
             className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
-            <img src={download} alt="download" />
           </button>
         </div>
 
