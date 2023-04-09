@@ -153,12 +153,12 @@ const CreatePost = () => {
           </button>
         </div>
 
-        <div className="mt-5 flex gap-5">
+        <div className="mt-5 flex gap-5">download
           <DownloadButton
             base64ImageString={form.base64ImageString}
             fileName={form.prompt}
             className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-          > download </DownloadButton>
+          /> 
         </div>
 
         <div className="mt-10">
