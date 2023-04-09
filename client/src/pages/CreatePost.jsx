@@ -15,7 +15,7 @@ const CreatePost = () => {
     photo: "",
   });
 
-  const [generatingImg, setGeneratingImg] = zzuseState(false);
+  const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const generateImage = async () => {
