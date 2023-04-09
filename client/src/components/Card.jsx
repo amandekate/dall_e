@@ -22,11 +22,13 @@ const Card = ({ _id, name, prompt, photo }) => {
             <p className="text-white text-sm">{name}</p>
           </div>
 
-          <button
+          {/* <button
             onClick={(e) => downloadImage(e, photo, prompt)}
             type="button"
             className="outline-none bg-transparent border-none"
-          >
+          > */}
+           <button type="button" onClick={() => downloadImage(_id, photo)} className="outline-none bg-transparent border-none">
+   
             <img
               src={download}
               alt="download"
