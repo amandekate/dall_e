@@ -154,11 +154,6 @@ const CreatePost = () => {
         </div>
 
         <div className="mt-5 flex gap-5">
-          {/* <DownloadButton
-            // base64ImageString={form.base64ImageString}
-            // fileName={form.prompt}
-            className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-          />  */}
           <DownloadButton
             onClick={() => downloadImage(form.photo, form.prompt)}
             className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
