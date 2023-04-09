@@ -5,7 +5,7 @@ import { preview } from "../assets";
 import { getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
 import DownloadButton from "../components/DownloadButton";
-import { downloadsImage } from "../utils";
+// import { downloadsImage } from "../utils";
 
 const CreatePost = () => {
   const navigate = useNavigate();
@@ -154,10 +154,10 @@ const CreatePost = () => {
         </div>
 
         <div className="mt-5 flex gap-5">
-          <DownloadButton
+          {/* <DownloadButton
             onClick={(e) => downloadsImage(e, form.photo, form.prompt)}
             className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-          />
+          /> */}
         </div>
 
         <div className="mt-10">
