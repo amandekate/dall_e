@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 import { download } from "../assets";
 import { downloadImage } from "../utils";
 const Card = ({ _id, name, prompt, photo }) => {
-  useEffect(() => {
-    console.log("Props - ", _id, name, prompt, photo);
-  }, []);
+
   return (
     <div className="rounded-xl group relative shadow-card hover:shadow-cardhover card">
       <img
