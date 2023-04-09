@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { preview } from "../assets";
-import {  getRandomPrompt } from "../utils";
+import { getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
 import DownloadButton from "../components/DownloadButton";
+import { downloadImage } from "../utils";
 
 const CreatePost = () => {
   const navigate = useNavigate();
@@ -28,7 +29,6 @@ const CreatePost = () => {
           {
             method: "POST",
             headers: {
-             
               "Content-Type": "application/json",
             },
             body: JSON.stringify({ prompt: form.prompt }),
@@ -65,7 +65,7 @@ const CreatePost = () => {
             headers: {
               "Content-Type": "application/json",
             },
-            
+
             body: JSON.stringify({ ...form }),
           }
         );
@@ -154,11 +154,18 @@ const CreatePost = () => {
         </div>
 
         <div className="mt-5 flex gap-5">
-          <DownloadButton
+          {/* <DownloadButton
             // base64ImageString={form.base64ImageString}
             // fileName={form.prompt}
             className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-          /> 
+          />  */}
+          <button
+            type="button"
+            onClick={() => downloadImage(_id, photo)}
+            className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+          >
+            <img src={download} alt="download" />
+          </button>
         </div>
 
         <div className="mt-10">
