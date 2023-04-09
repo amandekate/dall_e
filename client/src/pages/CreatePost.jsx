@@ -20,7 +20,7 @@ const CreatePost = () => {
 
   const generateImage = async () => {
     if (form.prompt) {
-      console.log(import.meta.env.VITE_BE_URL);
+      // console.log(import.meta.env.VITE_BE_URL);
       try {
         setGeneratingImg(true);
         const response = await fetch(
