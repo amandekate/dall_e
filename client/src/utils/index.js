@@ -10,6 +10,12 @@ export function getRandomPrompt(prompt) {
   return randomPrompt;
 }
 
+
+export async function downloadImage(_id, photo) {
+  FileSaver.saveAs(photo, `download-${_id}.jpg`);
+}
+
+
 export function downloadsImage(e, base64String, prompt) {
   e.preventDefault();
   const link = document.createElement('a');
@@ -19,8 +25,4 @@ export function downloadsImage(e, base64String, prompt) {
   link.click();
   document.body.removeChild(link);
   console.log("Downloading !!");
-
-}
-export async function downloadImage(_id, photo) {
-  FileSaver.saveAs(photo, `download-${_id}.jpg`);
 }
