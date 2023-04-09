@@ -23,7 +23,7 @@ app.get("/", async (req, res) => {
 
 const startServer = async () => {
   try {
-    console.log(process.env.NEXT_PUBLIC_OPENAI_API_KEY);
+    console.log(process.env.OPENAI_API_KEY);
     connectDB(process.env.MONGODB_URL);
     app.listen(8080, () =>
       console.log("Server has started on port http://localhost:8080")

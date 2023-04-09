@@ -31,7 +31,7 @@ const CreatePost = () => {
              
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ prompt: form.prompt , }),
+            body: JSON.stringify({ prompt: form.prompt }),
           }
         );
 
@@ -64,7 +64,7 @@ const CreatePost = () => {
             method: "POST",
             mode: 'no-cors',
             headers: {
-              // "access-control-allow-origin" : "*",
+              "access-control-allow-origin" : "*",
               "Content-Type": "application/json",
             },
             
@@ -157,7 +157,7 @@ const CreatePost = () => {
 
         <div className="mt-5 flex gap-5">
           <DownloadButton
-            src={form.photo}
+            base64ImageString={form.base64String}
             fileName={form.prompt}
             className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           />
