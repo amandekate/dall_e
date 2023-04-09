@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { download } from "../assets";
 import { downloadImage } from "../utils";
 const Card = ({ _id, name, prompt, photo }) => {
+  useEffect(() => {
+    console.log("Props - ", _id, name, prompt, photo);
+  }, []);
   return (
     <div className="rounded-xl group relative shadow-card hover:shadow-cardhover card">
       <img
@@ -18,8 +21,17 @@ const Card = ({ _id, name, prompt, photo }) => {
             </div>
             <p className="text-white text-sm">{name}</p>
           </div>
-          <button type="button" onClick={() => downloadImage(_id, photo)} className ="outline-none bg-transparent border-none">
-            <img src={download} alt="download" className="w-6 h-6 object-contain invert" />
+
+          <button
+            onClick={(e) => downloadImage(e, photo, prompt)}
+            type="button"
+            className="outline-none bg-transparent border-none"
+          >
+            <img
+              src={download}
+              alt="download"
+              className="w-6 h-6 object-contain invert"
+            />
           </button>
         </div>
       </div>
