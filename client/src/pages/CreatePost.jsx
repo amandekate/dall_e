@@ -99,8 +99,8 @@ const CreatePost = () => {
           share with the community
         </p>
       </div>
-      onSubmit={handleSubmit}
-      <form className="mt-16 max-w-3xl" >
+
+      <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-5">
           <FormField
             labelname="Your name"
@@ -153,12 +153,12 @@ const CreatePost = () => {
           </button>
         </div>
 
-        {/* <div className="mt-5 flex gap-5">
-          {/* <DownloadButton
+        <div className="mt-5 flex gap-5">
+          <DownloadButton
             onClick={(e) => downloadsImage(e, form.photo, form.prompt)}
             className="text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           />
-        </div> */} 
+        </div>
 
         <div className="mt-10">
           <p className="mt-2 text-[#666e75] text-[14px]">

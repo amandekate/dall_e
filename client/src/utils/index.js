@@ -16,13 +16,13 @@ export async function downloadImage(_id, photo) {
 }
 
 
-// export function downloadsImage(e, base64String, prompt) {
-//   e.preventDefault();
-//   const link = document.createElement('a');
-//   link.href = base64String;
-//   link.download = prompt;
-//   document.body.appendChild(link);
-//   link.click();
-//   document.body.removeChild(link);
-//   console.log("Downloading !!");
-// }
+export function downloadsImage(e, base64String, prompt) {
+  e.preventDefault();
+  const link = document.createElement('a');
+  link.href = base64String;
+  link.download = prompt;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  console.log("Downloading !!");
+}
